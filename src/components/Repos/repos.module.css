@@ -1,0 +1,25 @@
+.repo {
+  border: 2px solid lightgray;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+}
+.repoHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.repoHeaderName {
+  font-size: 24px;
+  font-weight: 400;
+}
+.repoHeaderStars {
+
+}
+.repoLastCommit {
+
+}
+.repoLink {
+  
+}
