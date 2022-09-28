@@ -1,3 +1,52 @@
-.main {
-  
+.loading {
+  width: 100px;
+  height: 100px;
+  margin: 30vh auto;
+  border: 2px dashed red;
+  border-radius: 100%;
+  animation-name: search-loading;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.search {
+  display: flex;
+  margin: 10px 0px;
+}
+.searchInput {
+  padding: 5px;
+  width: 100%;
+
+}
+.searchBtn {
+  padding: 5px;
+}
+
+.pages {
+  margin: 20px 0;
+}
+.page{
+  border: 1px solid lightgray;
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.currentPage {
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 2px solid gray;
+  font-weight: 700;
+}
+
+@keyframes search-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
 }
