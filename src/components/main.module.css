@@ -21,6 +21,7 @@
 }
 .searchBtn {
   padding: 5px;
+  cursor: pointer;
 }
 
 .pages {
@@ -28,13 +29,13 @@
 }
 .page{
   border: 1px solid lightgray;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
 }
 .currentPage {
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;

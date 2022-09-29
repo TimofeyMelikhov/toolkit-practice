@@ -41,8 +41,16 @@ const Main = () => {
       </div>
 
       { !fetching ? 
-        repos.map(({id, name, stargazers_count, updated_at, html_url}) => {
-          return <Repos key={id} name={name} stargazers_count={stargazers_count} updated_at={updated_at} html_url={html_url}/>
+        repos.map(({id, name, description, stargazers_count, updated_at, html_url, owner}) => {
+          return <Repos 
+            key={id} 
+            name={name} 
+            description={description} 
+            stargazers_count={stargazers_count} 
+            updated_at={updated_at} 
+            html_url={html_url}
+            owner={owner}
+          />
         }) 
         : <div className={classes.loading} />
       }

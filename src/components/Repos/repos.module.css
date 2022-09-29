@@ -15,6 +15,10 @@
   font-size: 24px;
   font-weight: 400;
 }
+.repoDescription {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
 .repoHeaderStars {
 
 }

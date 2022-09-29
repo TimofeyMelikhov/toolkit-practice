@@ -1,7 +1,8 @@
 import classes from './App.module.css';
 import React from 'react';
-import { Routes, Route, BrowserRouter  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Main from './components/Main';
+import Card from './components/card/Card'
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <div className={classes.container}>
         <Routes>
           <Route path='/' element={<Main />} />
+          <Route path='/card/:username/:reponame' element={<Card /> } />
+          <Route path='*' element={<Navigate to='/' replace/>} />
         </Routes>
       </div>
     </BrowserRouter>
