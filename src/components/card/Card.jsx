@@ -1,9 +1,9 @@
 import classes from './card.module.css'
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getCurrentRepos } from "../../redux/actions/reposActions";
 
-const Card = (props) => {
+const Card = () => {
 
   const {username, reponame} = useParams()
   const [repo, setRepo] = useState({owner: {}})
@@ -14,7 +14,7 @@ const Card = (props) => {
 
   return (
     <div>
-      <NavLink to='/'> На главную </NavLink>
+      <Link to='/'> На главную </Link>
       <div className={classes.card}>
         <img src={repo.owner.avatar_url} alt="avatar" />
         <div className={classes.name}>{repo.name}</div>

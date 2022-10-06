@@ -7,7 +7,8 @@ export const reposSlice = createSlice({
     isFetching: true,
     currentPage: 1,
     perPage: 10,
-    totalCount: 0
+    totalCount: 0,
+    isFetchError: false
   },
   reducers: {
     addRepos(state, action) {
@@ -20,9 +21,12 @@ export const reposSlice = createSlice({
     },
     setCurrentPage(state, action) {
       state.currentPage = action.payload
+    },
+    setFetchError(state,action) {
+      state.isFetchError = action.payload
     }
   }
 })
 
 export default reposSlice.reducer
-export const { addRepos, fetching, setCurrentPage } = reposSlice.actions
+export const { addRepos, fetching, setCurrentPage, setFetchError } = reposSlice.actions

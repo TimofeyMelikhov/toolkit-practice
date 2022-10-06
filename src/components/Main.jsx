@@ -5,6 +5,7 @@ import { getRepos } from '../redux/actions/reposActions'
 import { setCurrentPage } from '../redux/slices/reposSlice'
 import { createPages } from '../utils/pagesCreator'
 import Repos from './Repos/Repos'
+import { Navigate } from 'react-router-dom'
 
 const Main = () => {
 
@@ -14,6 +15,7 @@ const Main = () => {
   const currentPage = useSelector(state => state.repos.currentPage)
   const totalCount = useSelector(state => state.repos.totalCount)
   const perPage = useSelector(state => state.repos.perPage)
+  const isFetchError = useSelector(state => state.repos.isFetchError)
 
   const pagesCount = Math.ceil(totalCount / perPage)
 
@@ -25,7 +27,7 @@ const Main = () => {
 
   useEffect(() => {
     dispatch(getRepos(searchValue, currentPage, perPage))
-  }, [currentPage, dispatch, perPage, searchValue])
+  }, [dispatch, currentPage, perPage, searchValue])
 
   const searchHandler = () => {
     dispatch(currentPage(1))
@@ -33,10 +35,20 @@ const Main = () => {
     setSearchValue('')
   }
 
+  if(isFetchError) {
+    return <Navigate to='/error' replace />
+  }
+
   return (
     <div className={classes.main}>
       <div className={classes.search}>
-        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} type="text" placeholder='Введите название репозитория' className={classes.searchInput}/>
+        <input 
+          value={searchValue} 
+          onChange={e => setSearchValue(e.target.value)}
+          type="text" 
+          placeholder='Введите название репозитория' 
+          className={classes.searchInput}  
+        />
         <button onClick={searchHandler} className={classes.searchBtn}>Поиск</button>
       </div>
 

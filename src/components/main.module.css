@@ -28,19 +28,27 @@
   margin: 20px 0;
 }
 .page{
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  width: 35px;
+  height: 35px;
   border: 1px solid lightgray;
   border-radius: 50%;
-  padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
 }
 .currentPage {
+  display: inline-block;
   border-radius: 50%;
-  padding: 5px 10px;
   margin: 0 10px;
   cursor: pointer;
   border: 2px solid gray;
   font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 @keyframes search-loading {
