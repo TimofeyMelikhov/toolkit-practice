@@ -12,7 +12,7 @@ function App() {
       <div className={classes.container}>
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/card/:username/:reponame' element={<Card /> } />
+          <Route path='/card/:username/:reponame' element={<Card /> } />          
           <Route path='/error' element={<Error /> } />
           <Route path='*' element={<Navigate to='/' replace />} />
         </Routes>

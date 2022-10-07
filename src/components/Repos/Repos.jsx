@@ -1,7 +1,14 @@
 import classes from './repos.module.css'
 import { Link } from 'react-router-dom';
 
-const Repo = ({name, description, stargazers_count, updated_at, html_url, owner}) => {
+const Repo = ({
+  name, 
+  description, 
+  stargazers_count, 
+  updated_at, 
+  html_url, 
+  owner
+}) => {
 
   return (
     <div className={classes.repo}>
